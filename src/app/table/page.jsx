@@ -70,6 +70,7 @@ const headerData = [
 ];
 
 // Remove the local dummyData array since we're now importing it
+
 const HeaderCell = ({ short, long, className }) => {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -99,50 +100,46 @@ const HeaderCell = ({ short, long, className }) => {
     </th>
   );
 };
-
 const Page = () => {
   return (
-    <div>
-      {" "}
-      <TableContainer>
-        <table className="tg">
-          <thead>
-            <tr>
-              {headerData.map((header) => (
-                <HeaderCell
-                  key={header.id}
-                  short={header.short}
-                  long={header.long}
-                  className={header.className}
-                />
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {dummyData.map((data) => (
-              <tr key={data.id}>
-                <td>{data.rank}</td>
-                <td className="teamheader">{data.playerName}</td>
-                <td>{data.teamLabel}</td>
-                <td>{data.pos}</td>
-                <td>{data.gp}</td>
-                <td>{data.g}</td>
-                <td>{data.a}</td>
-                <td>{data.pt}</td>
-                <td>{data.pp}</td>
-                <td>{data.sh}</td>
-                <td>{data.en}</td>
-                <td>{data.ps}</td>
-                <td>{data.pm}</td>
-                <td>{data.sog}</td>
-                <td>{data.soa}</td>
-                <td>{data.gw}</td>
-              </tr>
+    <TableContainer>
+      <table className="tg">
+        <thead>
+          <tr>
+            {headerData.map((header) => (
+              <HeaderCell
+                key={header.id}
+                short={header.short}
+                long={header.long}
+                className={header.className}
+              />
             ))}
-          </tbody>
-        </table>
-      </TableContainer>
-    </div>
+          </tr>
+        </thead>
+        <tbody>
+          {dummyData.map((data) => (
+            <tr key={data.id}>
+              <td>{data.rank}</td>
+              <td className="teamheader">{data.playerName}</td>
+              <td>{data.teamLabel}</td>
+              <td>{data.pos}</td>
+              <td>{data.gp}</td>
+              <td>{data.g}</td>
+              <td>{data.a}</td>
+              <td>{data.pt}</td>
+              <td>{data.pp}</td>
+              <td>{data.sh}</td>
+              <td>{data.en}</td>
+              <td>{data.ps}</td>
+              <td>{data.pm}</td>
+              <td>{data.sog}</td>
+              <td>{data.soa}</td>
+              <td>{data.gw}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </TableContainer>
   );
 };
 
